@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: installing tomcat
+    yum: 
+      name: tomcat7
+      state: present
+  - name: restarting tomcat
+    service:
+      name: tomcat7
+      state: started
+  ######## delploy whatever files you want in webapps folder ############
+  
